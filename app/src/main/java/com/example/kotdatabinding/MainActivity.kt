@@ -11,11 +11,13 @@ import com.example.kotdatabinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
+    private var myName : myData = myData("noel")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.myData = myName
 
 
 
@@ -27,7 +29,8 @@ class MainActivity : AppCompatActivity() {
 //        var nameTv = findViewById<TextView>(R.id.nameTV)
   //      var nicknameEt = findViewById<EditText>(R.id.nicknameET)
 binding.apply {
-    nameTV.text = nicknameET.text
+
+    myData?.nickname = nicknameET.text.toString()
     nicknameET.visibility = View.GONE
     view.visibility = View.GONE
     invalidateAll()

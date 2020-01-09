@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="myData"
+            type="com.example.kotdatabinding.myData" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         xmlns:tools="http://schemas.android.com/tools"
@@ -15,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_thin"
-            android:text="@string/myName"
+            android:text="@={myData.name}"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -41,6 +48,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
+            android:text="@={myData.nickname}"
             android:hint="What's your nickname?"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
